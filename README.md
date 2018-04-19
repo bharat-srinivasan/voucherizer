@@ -1,14 +1,11 @@
 # Voucherizer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+## About
+Voucherizer is an simple PWA to create gift cards/voucher. The purpose of this application is to demonstrate PWA and might not have full capabilities implemented. 
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Assumptions & Behaviors
+1. User contains 1000 points initially.
+2. Whenever user starts application, it resets to 1000 points.
 
 ## Build
 
@@ -16,12 +13,16 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Running as a PWA
+1. Install http-server using `npm i -g http-server`
+2. Run `npm run build`
+3. Run `npm run launch`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## To see PWA evaluation report, open `pwa-report.html`
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Future Enhancement
+1. Persist user's available points
+2. Integrate with payment systems, when short of points.
+3. Integrate with system that can generate points.

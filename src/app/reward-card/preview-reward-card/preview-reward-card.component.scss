@@ -1,0 +1,17 @@
+.reward-card {
+  max-width: 400px;
+  min-height: 120px;
+  & .title {
+    font-size: 1.6rem;
+  }
+  & .signature {
+    float: right;
+    font-size: 0.8rem;
+    padding: 0 1rem 0 0;
+    font-style: italic;
+  }
+}
+
+mat-card .content {
+  margin: 1rem;
+}

@@ -1,0 +1,38 @@
+<mat-vertical-stepper linear=true #stepper="matVerticalStepper">
+  <mat-step [stepControl]="detailsFormGroup">
+    <form [formGroup]="detailsFormGroup" (ngSubmit)="onSubmit()" #formDirective="ngForm">
+      <ng-template matStepLabel>Fill Out</ng-template>
+      <div class="reward-card-container">
+        <mat-form-field>
+          <input matInput placeholder="Name" formControlName="name" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="email" required>
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput placeholder="Message" formControlName="message"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select [(value)]="selectedValue" placeholder="Reward Value" formControlName="value" required>
+            <mat-option value="100">100</mat-option>
+            <mat-option value="200">200</mat-option>
+            <mat-option value="500">500</mat-option>
+            <mat-option value="1000">1000</mat-option>
+          </mat-select>
+          <mat-hint>You can purchase additional points during checkout.</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="step-footer">
+        <button mat-raised-button matStepperNext [disabled]="!detailsFormGroup.valid" type="submit">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Preview & Checkout</ng-template>
+    <app-preview-reward-card></app-preview-reward-card>
+    <div class="step-footer">
+      <button mat-raised-button matStepperPrevious>Back</button>
+      <button mat-raised-button matStepperNext (click)="purchase(stepper, formDirective)">Purchase</button>
+    </div>
+  </mat-step>
+</mat-vertical-stepper>

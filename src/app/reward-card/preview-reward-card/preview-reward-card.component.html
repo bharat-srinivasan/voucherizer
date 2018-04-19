@@ -1,0 +1,22 @@
+<mat-card class="reward-card" *ngIf="reward">
+  <mat-card-header class="card-header">
+    <mat-card-title class="title">
+      <span class="gift-icon">
+        <i class="fas fa-gift"></i>
+      </span>
+      Congratulations
+    </mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content class="content">
+    <p>
+      <span class="name">{{reward.name}}</span>,
+      <span *ngIf="reward.message">{{reward.message}}.</span>
+      You have received a gift voucher of worth
+      <i class="fas fa-rupee-sign">{{reward.value}}</i>.
+    </p>
+  </mat-card-content>
+  <mat-card-footer class="signature">
+    With Best Wishes, <span>{{user.name}}</span>
+  </mat-card-footer>
+</mat-card>
